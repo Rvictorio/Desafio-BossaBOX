@@ -32,6 +32,6 @@ public class Tools {
         this.tags = tags;
     }
 
-    public Tools() {
+    public Tools(String title, String link, String description, List<String> tags) {
     }
 }
