@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface ToolsRepository extends JpaRepository<Tools, Long> {
 
-    public List<Tools> findByTags(String tags);
+
+    List<Tools> findByTagsIn(List<String> tags);
 }
