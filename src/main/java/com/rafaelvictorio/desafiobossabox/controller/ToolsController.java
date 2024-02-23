@@ -24,7 +24,7 @@ public class ToolsController {
         List<Tools> allTools = toolsService.getAllTools();
         return ResponseEntity.ok().body(allTools);
     }
-    @GetMapping
+    @GetMapping("/findByTag")
     public ResponseEntity findToolsByTag(@RequestParam List<String> tags){
         List<Tools> toolsList = toolsService.findToolsTag(tags);
         return ResponseEntity.ok().body(toolsList);
@@ -43,6 +43,13 @@ public class ToolsController {
 
         return ResponseEntity.created(headerLocation).body(toolsResponse);
     }
+    @DeleteMapping
+    public ResponseEntity deleteTools(@RequestParam Long id){
+        toolsService.deleteToolsById(id);
+        return ResponseEntity.ok().body("Tools deleted");
+
+    }
+
 
 
 }
